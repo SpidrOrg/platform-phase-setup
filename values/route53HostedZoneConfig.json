@@ -1,0 +1,22 @@
+{
+  "kearneysnp.com": {
+    "dev": [
+      "ns-1720.awsdns-23.co.uk.",
+      "ns-161.awsdns-20.com.",
+      "ns-749.awsdns-29.net.",
+      "ns-1365.awsdns-42.org."
+    ],
+    "qa": [
+      "ns-1960.awsdns-53.co.uk.",
+      "ns-109.awsdns-13.com.",
+      "ns-1000.awsdns-61.net.",
+      "ns-1404.awsdns-47.org."
+    ],
+    "uat": [
+      "ns-1336.awsdns-39.org.",
+      "ns-753.awsdns-30.net.",
+      "ns-1818.awsdns-35.co.uk.",
+      "ns-282.awsdns-35.com."
+    ]
+  }
+}

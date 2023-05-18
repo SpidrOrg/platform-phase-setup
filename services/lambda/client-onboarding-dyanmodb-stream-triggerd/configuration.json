@@ -1,0 +1,13 @@
+{
+  "runtime": "NODEJS_18_X",
+  "architecture": "x86_64",
+  "configuration": {
+    "iamRole": "client-onboarding-lambda-pipeline-trigger",
+    "timeout": 900
+  },
+  "environment": {
+    "awsAccountId": ":123456789012:",
+    "region": "us-east-1"
+  },
+  "layers": []
+}
