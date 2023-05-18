@@ -16,7 +16,7 @@
   },
   "319925118739": {
     "us-east-1": {
-      "envName": "alpha"
+      "envName": "prod"
     }
   }
 }
