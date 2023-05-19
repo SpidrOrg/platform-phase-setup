@@ -18,5 +18,8 @@
       "ns-1818.awsdns-35.co.uk.",
       "ns-282.awsdns-35.com."
     ]
-  }
+  },
+  "uat.kearneysnp.com": {},
+  "qa.kearneysnp.com": {},
+  "dev.kearneysnp.com": {}
 }
