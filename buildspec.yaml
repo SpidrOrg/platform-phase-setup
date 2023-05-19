@@ -8,3 +8,4 @@ phases:
       - npm i -g cdk
       - cdk bootstrap
       - cdk deploy --all --require-approval=never
+      - node postDeploy.js

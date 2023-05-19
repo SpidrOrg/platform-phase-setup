@@ -1,0 +1,10 @@
+{
+  "DataLakeSettings": {
+    "DataLakeAdmins": [{
+      "DataLakePrincipalIdentifier": "arn:aws:iam::226772227397:role/cdk-client-onboarding-codebuild-role"
+    }, {
+      "DataLakePrincipalIdentifier": "arn:aws:iam::226772227397:role/cdk-client-offboarding-codebuild-role"
+    }
+    ]
+  }
+}
