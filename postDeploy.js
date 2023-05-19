@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const { exec } = require('node:child_process');
 
-let postDeployContents = fs.readFileSync("./lakePermissionTemplate.json");
+let postDeployContents = fs.readFileSync("./lakePermissionTemplate.json", "utf-8");
 postDeployContents = postDeployContents.replaceAll(":123456789012:");
 fs.writeFileSync("./lakePermission.json", postDeployContents)
 
