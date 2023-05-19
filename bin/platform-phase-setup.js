@@ -9,9 +9,6 @@ const awsAccount = process.env.CODEBUILD_BUILD_ARN.split(":")[indexOfAwsAccountI
 const awsRegion = process.env.AWS_REGION;
 const codestarConnArn = process.env.MP_GITHUB_CONN_ARN;
 const appAwsRepo = process.env.MP_APP_AWS_REPO.split("/");
-const ingestionAwsRepo = process.env.MP_INGESTION_AWS_REPO.split("/");
-const transformationAwsRepo = process.env.MP_TRANSFORMATION_AWS_REPO.split("/");
-const platformTfRepo = process.env.MP_PLATFORM_TF_REPO.split("/");
 const envName = process.env.MP_ENV_NAME;
 const domainName = process.env.MP_DOMAIN_NAME;
 // or this//
@@ -24,8 +21,5 @@ new mainStack(app, 'PlatformPhaseSetupStack', {
  envName,
  codestarConnArn,
  appAwsRepo,
- ingestionAwsRepo,
- transformationAwsRepo,
- platformTfRepo,
  domainName
 });
