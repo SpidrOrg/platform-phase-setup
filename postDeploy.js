@@ -10,6 +10,7 @@ const awsAccount = process.env.CODEBUILD_BUILD_ARN.split(":")[indexOfAwsAccountI
 const awsRegion = process.env.AWS_REGION;
 const envName = process.env.MP_ENV_NAME;
 const domainName = process.env.MP_DOMAIN_NAME;
+const adminHostName = "snpadmin";
 
 let postDeployContents = fs.readFileSync("./lakePermissionTemplate.json", "utf-8");
 postDeployContents = postDeployContents.replaceAll(":123456789012:", awsAccount);
@@ -46,7 +47,7 @@ exec(`aws s3api head-object --bucket ${adminUiS3BucketName} --key admin_ui/index
     const oauthDomainFQDN = `${cognitoExports[`Export${getExportName('userPoolDomain', {id: `spiadmin${envName}`})}`]}.auth.us-east-1.amazoncognito.com`;
     idpConfigTemplateContents = idpConfigTemplateContents.replace(/(.*)oauthDomain:.*/, `$1oauthDomain: "${oauthDomainFQDN}",`);
 
-    const clientWebAppFQDN = `https://admin.${domainName}`;
+    const clientWebAppFQDN = `https://${adminHostName}.${domainName}`;
     idpConfigTemplateContents = idpConfigTemplateContents.replace(/(.*)redirectSignIn:.*/, `$1redirectSignIn: "${clientWebAppFQDN}",`);
     idpConfigTemplateContents = idpConfigTemplateContents.replace(/(.*)redirectSignOut:.*/, `$1redirectSignOut: "${clientWebAppFQDN}",`);
 
