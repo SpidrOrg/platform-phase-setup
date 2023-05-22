@@ -11,6 +11,5 @@ phases:
       - npm i -g cdk
       - cdk bootstrap
       - cdk deploy --all --require-approval=never --outputs-file ./stackexports.json
-      - node postDeploy.js
       - cat ./stackexports.json
       - node postDeploy.js
