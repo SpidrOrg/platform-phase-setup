@@ -2,7 +2,7 @@
   "runtime": "NODEJS_18_X",
   "architecture": "x86_64",
   "configuration": {
-    "iamRole": "client-onboarding-lambda-pipeline-trigger",
+    "iamRole": "client-onboarding-dyanmodb-stream-triggerd-role",
     "timeout": 900
   },
   "environment": {
