@@ -2,15 +2,15 @@ const { exec } = require('node:child_process')
 const path = require("path");
 
 // This
-// const indexOfAwsAccountInArnSplit = process.env.CODEBUILD_BUILD_ARN.split(":").indexOf(process.env.AWS_REGION) + 1;
-// const awsAccount = process.env.CODEBUILD_BUILD_ARN.split(":")[indexOfAwsAccountInArnSplit];
-// const awsRegion = process.env.AWS_REGION;
+const indexOfAwsAccountInArnSplit = process.env.CODEBUILD_BUILD_ARN.split(":").indexOf(process.env.AWS_REGION) + 1;
+const awsAccount = process.env.CODEBUILD_BUILD_ARN.split(":")[indexOfAwsAccountInArnSplit];
+const awsRegion = process.env.AWS_REGION;
 // or this//
-const awsAccount = "226772227397";
-const awsRegion = "us-east-1";
+// const awsAccount = "226772227397";
+// const awsRegion = "us-east-1";
 
 // Clone Repo
-const codeRepoToken = "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" //process.env.MP_CODE_REPOS_TOKEN;
+const codeRepoToken = process.env.MP_CODE_REPOS_TOKEN;
 
 exec(`git clone https://${codeRepoToken}@github.com/SpidrOrg/client-onboarding.git`, (error, output)=>{
   if (error){
