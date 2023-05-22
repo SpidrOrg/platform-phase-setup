@@ -28,7 +28,7 @@ exec(`git clone https://${codeRepoToken}@github.com/SpidrOrg/client-onboarding.g
     console.log("Successfully ran build on Client Onboarding codebase", output1);
 
     // Create directory Services and copy infra contents from cloned repo
-    exec(`mkdir services && mkdir services/adminUi && cp -r client-onboarding/infra/ services/ && cp -r client-onboarding/dist/ services/adminUi/`, (error11, output11)=>{
+    exec(`mkdir services && mkdir services/adminUi && cp -r client-onboarding/infra/* services/ && cp -r client-onboarding/dist/* services/adminUi/`, (error11, output11)=>{
       if (error11){
         console.log("Error ", error11);
         console.log("Error with pre-setup");
