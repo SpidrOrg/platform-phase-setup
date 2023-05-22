@@ -7,7 +7,8 @@
   "scripts": {
     "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
     "cdk": "cdk",
-    "test": "jest"
+    "test": "jest",
+    "devsynth": "AWS_REGION=us-east-1 CODEBUILD_BUILD_ARN=::us-east-1:123456789012 MP_GITHUB_CONN_ARN=arn:aws:codestar-connections:us-east-1:226772227397:connection/eb96c7cf-3b9e-402a-a616-6a14ede18226 MP_APP_AWS_REPO=SpidrOrg/app-aws-stack/main MP_ENV_NAME=stage MP_DOMAIN_NAME=stage.kearneysnp.com MP_ADMIN_UI_USER_EMAIL=vishal.daga@xebai.com cdk synth"
   },
   "devDependencies": {
     "aws-cdk": "2.77.0",
