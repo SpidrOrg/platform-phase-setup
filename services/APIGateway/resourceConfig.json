@@ -1,0 +1,18 @@
+{
+  "history": {
+    "GET": {
+      "integrationRequest": {
+        "lambda": "co-tenant-onboard-ui-history-handler",
+        "proxy": true
+      }
+    }
+  },
+  "new": {
+    "POST": {
+      "integrationRequest": {
+        "lambda": "co-tenant-onboard-ui-handler",
+        "proxy": true
+      }
+    }
+  }
+}

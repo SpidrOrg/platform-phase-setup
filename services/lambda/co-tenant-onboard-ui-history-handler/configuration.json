@@ -2,8 +2,8 @@
   "runtime": "NODEJS_18_X",
   "architecture": "x86_64",
   "configuration": {
-    "iamRole": "client-onboarding-lambda-pipeline-trigger",
-    "timeout": 900
+    "iamRole": "tenant-onboard-history-role",
+    "timeout": 30
   },
   "environment": {
     "awsAccountId": ":123456789012:",
