@@ -30,11 +30,11 @@ exec(`aws s3api head-object --bucket ${adminUiS3BucketName} --key admin_ui/index
     // Use IDP Config template to generate right idp config and replace idpConfig.js in adminUi bundle
     let idpConfigTemplateContents = fs.readFileSync("./adminUiIdpConfigTemplate.js", "utf-8");
 
-    const cognitoStackExportsStartKey = 'krnysnpapplicationstackCognitoInfraStack';
+    const cognitoStackExportsStartKey = 'PlatformPhaseSetupStackClientOnboardingUiStack';
     const cognitoStackExportsKey = Object.keys(stackExports).filter(k => k.startsWith(cognitoStackExportsStartKey));
     const cognitoExports = stackExports[cognitoStackExportsKey];
 
-    const apiGatewayStackExportsStartKey = 'krnysnpapplicationstackApiGatewayInfraStack';
+    const apiGatewayStackExportsStartKey = 'PlatformPhaseSetupStackClientOnboardingUiStack';
     const apiGatewayStackExportsKey = Object.keys(stackExports).filter(k => k.startsWith(apiGatewayStackExportsStartKey));
     const apiGatewayExports = stackExports[apiGatewayStackExportsKey];
 
