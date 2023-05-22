@@ -20,7 +20,7 @@ exec(`git clone https://${codeRepoToken}@github.com/SpidrOrg/client-onboarding.g
   console.log("Successfully cloned client onboarding UI codebase", output);
 
   // Run npm run build inside codebase
-  exec(`cd client-onboarding && npm ci && npm run build`, (error1, output1)=>{
+  exec(`cd client-onboarding && npm ci && npm run build && cd ..`, (error1, output1)=>{
     if (error1){
       console.log("Error create build from Client Onboarding codebase", error1);
       return;
