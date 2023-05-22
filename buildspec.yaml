@@ -5,6 +5,7 @@ phases:
     commands:
       - cd "$CODEBUILD_SRC_DIR"
       - node preSetup.js
+      - ls -a
       - npm ci
       - npm i -g cdk
       - cdk bootstrap
