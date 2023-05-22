@@ -38,12 +38,12 @@ exec(`aws s3api head-object --bucket ${adminUiS3BucketName} --key admin_ui/index
     const apiGatewayStackExportsKey = Object.keys(stackExports).filter(k => k.startsWith(apiGatewayStackExportsStartKey));
     const apiGatewayExports = stackExports[apiGatewayStackExportsKey];
 
-    const clientUserPoolID = cognitoExports[`Export${getExportName('userPoolId', {id: `spi-admin-${envName}`})}`];
-    const clientUserPoolWebClientId = cognitoExports[`Export${getExportName('userPoolClient', {id: `spi-admin-${envName}`})}`];
+    const clientUserPoolID = cognitoExports[`Export${getExportName('userPoolId', {id: `spiadmin${envName}`})}`];
+    const clientUserPoolWebClientId = cognitoExports[`Export${getExportName('userPoolClient', {id: `spiadmin${envName}`})}`];
     idpConfigTemplateContents = idpConfigTemplateContents.replace(/(.*)userPoolId:.*/, `$1userPoolId: "${clientUserPoolID}",`);
     idpConfigTemplateContents = idpConfigTemplateContents.replace(/(.*)userPoolWebClientId:.*/, `$1userPoolWebClientId: "${clientUserPoolWebClientId}",`);
 
-    const oauthDomainFQDN = `${cognitoExports[`Export${getExportName('userPoolDomain', {id: `spi-admin-${envName}`})}`]}.auth.us-east-1.amazoncognito.com`;
+    const oauthDomainFQDN = `${cognitoExports[`Export${getExportName('userPoolDomain', {id: `spiadmin${envName}`})}`]}.auth.us-east-1.amazoncognito.com`;
     idpConfigTemplateContents = idpConfigTemplateContents.replace(/(.*)oauthDomain:.*/, `$1oauthDomain: "${oauthDomainFQDN}",`);
 
     const clientWebAppFQDN = `https://admin.${domainName}`;
