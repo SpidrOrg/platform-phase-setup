@@ -4,8 +4,11 @@ phases:
   build:
     commands:
       - cd "$CODEBUILD_SRC_DIR"
+      - node preSetup.js
       - npm ci
       - npm i -g cdk
       - cdk bootstrap
-      - cdk deploy --all --require-approval=never
+      - cdk deploy --all --require-approval=never --outputs-file ./stackexports.json
+      - node postDeploy.js
+      - cat ./stackexports.json
       - node postDeploy.js

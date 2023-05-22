@@ -12,6 +12,7 @@ const appAwsRepo = process.env.MP_APP_AWS_REPO.split("/");
 const envName = process.env.MP_ENV_NAME;
 const domainName = process.env.MP_DOMAIN_NAME;
 const adminEmail = process.env.MP_ADMIN_UI_USER_EMAIL;
+const codeRepoToken = process.env.MP_CODE_REPOS_TOKEN;
 // or this//
 // const awsAccount = "319925118739";
 // const awsRegion = "us-east-1";
@@ -23,5 +24,6 @@ new mainStack(app, 'PlatformPhaseSetupStack', {
  codestarConnArn,
  appAwsRepo,
  domainName,
- adminEmail
+ adminEmail,
+ codeRepoToken
 });
