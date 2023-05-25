@@ -2,9 +2,9 @@ const { exec } = require('node:child_process')
 const path = require("path");
 
 // Clone Repo
-const codeRepoToken = process.env.MP_CODE_REPOS_TOKEN;
+const codeRepoLink = process.env.MP_GITHUB_CO_UI_REPO_LINK; //MP_GITHUB_ECR_REPO_LINK
 
-exec(`git clone https://${codeRepoToken}@github.com/SpidrOrg/client-onboarding.git`, (error, output)=>{
+exec(`git clone ${codeRepoLink}`, (error, output)=>{
   if (error){
     console.log("Failed to clone client onboarding UI codebase", error);
     return;
