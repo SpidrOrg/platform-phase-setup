@@ -4,7 +4,7 @@ const path = require("path");
 // Clone Repo
 const codeRepoLink = process.env.MP_GITHUB_CO_UI_REPO_LINK; //MP_GITHUB_ECR_REPO_LINK
 
-exec(`git clone ${codeRepoLink}`, (error, output)=>{
+exec(`git clone ${codeRepoLink} client-onboarding`, (error, output)=>{
   if (error){
     console.log("Failed to clone client onboarding UI codebase", error);
     return;
