@@ -74,7 +74,7 @@ exec(`aws s3 rm s3://${adminUiS3BucketName}/admin_ui`, (error, exists)=>{
   });
 
   console.log("Upading hosted UI logo...")
-  exec(`aws cognito-idp set-ui-customization --user-pool-id ${clientUserPoolID} --client-id ${clientUserPoolWebClientId} --image-file fileb://./Kearney_Logo.svg.png --css  ".banner-customizable {background-color: #802d2c;} .submitButton-customizable:hover {background-color: #ffffff;} .submitButton-customizable {background-color: #000000;} .textDescription-customizable {font-family: serif}"`, (err, output) => {
+  exec(`aws cognito-idp set-ui-customization --user-pool-id ${clientUserPoolID} --client-id ${clientUserPoolWebClientId} --image-file fileb://./Kearney_Logo.svg.png --css  ".banner-customizable {background-color: #ffffff;} .submitButton-customizable:hover {background-color: #000000;} .submitButton-customizable {background-color: #7823DC;} .textDescription-customizable {font-family: serif}"`, (err, output) => {
     if (err) {
       console.error("Failed to update logo: ", err)
       return
