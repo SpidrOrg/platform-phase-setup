@@ -61,6 +61,7 @@ exec(`aws s3 rm s3://${adminUiS3BucketName}/admin_ui`, (error, exists)=>{
   const stageRootResourcePath = `${gatewayStageName}${clientApiRootResourcePath}`;
   idpConfigTemplateContents = idpConfigTemplateContents.replace(/(.*)apiPrefix:.*/, `$1apiPrefix: "${apiPrefix}",`);
   idpConfigTemplateContents = idpConfigTemplateContents.replace(/(.*)stage:.*/, `$1stage: "${stageRootResourcePath}",`);
+  idpConfigTemplateContents = idpConfigTemplateContents.replace(/(.*)region:.*/, `$1region: "${awsRegion}",`);
 
   const pathToAdminUiBundle = "./services/adminUi"
   fs.writeFileSync(`${pathToAdminUiBundle}/idpConfig.js`, idpConfigTemplateContents);
